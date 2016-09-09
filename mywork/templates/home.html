@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}滨恒贸易{% endblock %}
+{% block script %}
+{% load staticfiles %}
+
+<script src="//upcdn.b0.upaiyun.com/libs/jqueryui/jquery.ui-1.9.0.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<link href="http://apps.bdimg.com/libs/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+<style type="text/css" src="{% static 'bootstrap/css/bootstrap.css' %}"></style>
+
+
+{% endblock %}
+{% block content %}
+
+
+
+
+
+
+
+    <div class="container" id="main">
+        <div class="content">
+            <h2 class="hero">任务列表</h2>
+        </div>
+        <div class="table-responsive">
+            <script src="//upcdn.b0.upaiyun.com/libs/jqueryui/jquery.ui-1.9.0.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<link href="http://apps.bdimg.com/libs/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+<style type="text/css" src="{% static 'bootstrap/css/bootstrap.css' %}"></style>
+
+                <!-- <div class="col-xs-12 col-md-8 col-md-offset-2"> -->
+                    <table class="table table-hover " style="">
+                    <tr>
+                    <td id="number"><strong>编号</strong></td>
+                    <td id="Work_type"><strong>工作分类</strong></td>
+                    <td id="Title"><strong>标题</strong></td>
+                    <td id="Target"><strong>目的</strong></td>
+                    <td id="Steps"><strong>方案</strong></td>
+                    <td id="Ordered"><strong>是否完成</strong></td>
+                    <td id="Finisher"><strong>负责人</strong></td>
+                    <td id="Startime"><strong>开始时间</strong></td>
+                    <td id="Endtime"><strong>结束时间</strong></td>
+
+                   
+                    </tr>
+                    
+
+                    {% for book in books %}
+                  
+                    <tr class="
+                    {% if book.Endtime == none %}
+                        success
+                    {% else %} 
+                        {% if book.Ordered == True %}
+                            warning
+                        {% else %}
+                            danger
+                        {% endif %}
+                    {% endif %}">
+
+                    <td>{{ book.Number }}</td>
+                    <td>{{ book.Work_type }}</td>
+                    <td>{{ book.Title }}</td>
+                    <td>{{ book.Target }}</td>
+                    <td>{{ book.Steps }}</td>
+                    <td>{{ book.Ordered }}</td>
+                    <td>{{ book.Finisher }}</td>
+                    <td>{{ book.Startime }}</td>
+                    <td>{{ book.Endtime }}</td>
+
+
+                    </tr>
+
+
+                    {% endfor %}
+                </table>
+            </div>
+        <!-- </div>  -->
+    </div>
+
+
+{% endblock %}
